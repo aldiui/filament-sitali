@@ -10,7 +10,7 @@ use Filament\Widgets\StatsOverviewWidget\Card;
 
 class Stats extends BaseWidget
 {
-    protected function getCards(): array
+    protected function getStats(): array
     {
         return [
             Card::make('Tarif Listrik', TarifListrik::count()),
