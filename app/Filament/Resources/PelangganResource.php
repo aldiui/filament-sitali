@@ -68,15 +68,17 @@ class PelangganResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()->label(''),
+                Tables\Actions\DeleteAction::make()->label(''),
 
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->paginated([25, 50, 100, 'all']);
+
     }
 
     public static function getRelations(): array
